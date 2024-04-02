@@ -55,4 +55,8 @@ public class Unit {
 			target.curHp = 0;
 		}
 	}
+	
+	public void printStatus() {
+		System.out.println("[" + name + "] [" + curHp + "/" + maxHp + "] [" + power + "]");
+	}
 }
