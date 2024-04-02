@@ -81,8 +81,11 @@ public class StageBattle extends Stage {
 			return;
 		
 		System.out.println("======= [메뉴 선택] =======");
-		System.out.println(" [" + p.getName() + "] [1.어택] [2.스킬]");
-		int sel = GameManager.inputNumber("");
+		int sel = 0;
+		while(sel != 1 && sel != 2) {
+			System.out.println(" [" + p.getName() + "] [1.어택] [2.스킬]");
+			sel = GameManager.inputNumber("");
+		}
 		if(sel == 1) {
 			while(true) {
 				int idx = random.nextInt(monsterList.size());
@@ -90,9 +93,9 @@ public class StageBattle extends Stage {
 				if(monsterList.get(idx).getCurHp() > 0) {
 					p.attack(monsterList.get(idx));
 					break;
-				} else if (sel == 2) {
 				}
 			}
+		} else if (sel == 2) {
 		}
 	}
 	
