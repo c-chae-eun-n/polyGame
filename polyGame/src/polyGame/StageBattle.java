@@ -63,13 +63,13 @@ public class StageBattle extends Stage {
 	}
 
 	public void printCharacter() {
-		System.out.println("==== [BATTLE] ====");
+		System.out.println("======= [BATTLE] =======");
 		
-		System.out.println("==== [PLAYER] ====");
+		System.out.println("======= [PLAYER] =======");
 		for(int i=0; i<playerList.size(); i++)
 			playerList.get(i).printStatus();
 		
-		System.out.println("==== [MONSTER ====");
+		System.out.println("======= [MONSTER =======");
 		for(int i=0; i<monsterList.size(); i++) {
 			monsterList.get(i).printStatus();
 		}
@@ -80,8 +80,8 @@ public class StageBattle extends Stage {
 		if(p.getCurHp() <= 0)
 			return;
 		
-		System.out.println("==== [메뉴 선택] ====");
-		System.out.println("[" + p.getName() + "] [1.어택] [2.스킬]");
+		System.out.println("======= [메뉴 선택] =======");
+		System.out.println(" [" + p.getName() + "] [1.어택] [2.스킬]");
 		int sel = GameManager.inputNumber("");
 		if(sel == 1) {
 			while(true) {
