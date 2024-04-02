@@ -50,7 +50,7 @@ public class GameManager {
 		int number = 0;
 		
 		try {
-			System.err.println(message + " : ");
+			System.out.println(message + " : ");
 			String input = scan.next();
 			number = Integer.parseInt(input);
 		} catch (Exception e) {
