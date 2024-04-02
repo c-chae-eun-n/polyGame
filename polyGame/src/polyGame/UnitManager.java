@@ -11,6 +11,10 @@ public class UnitManager {
 	String monsters[] = {"UnitWolf", "UnitBat", "UnitOrc"};
 	Random random = new Random();
 
-	
+	public UnitManager() {
+		playerList.add(new Player("전사", 1000, 80));
+		playerList.add(new Player("마법사", 800, 65));
+		playerList.add(new Player("힐러", 500, 45));
+	}
 	
 }
