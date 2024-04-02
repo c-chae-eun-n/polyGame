@@ -47,6 +47,12 @@ public class Unit {
 		this.name = name;
 	}
 	
+	public void setMonster(int maxHp, int power) {
+		this.maxHp = maxHp;
+		this.curHp = maxHp;
+		this.power = power;
+	}
+	
 	public void attack(Unit target) {
 		target.curHp -= power;
 		System.out.println("[" + name + "] 이 " + "[" + target.name + "] 에게 " + power + "의 데미지를 입힙니다. ");
