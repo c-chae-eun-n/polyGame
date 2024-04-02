@@ -45,4 +45,23 @@ public class GameManager {
 		else
 			return true;
 	}
+	
+	public int inputNumber(String message) {
+		int number = 0;
+		
+		try {
+			System.err.println(message + " : ");
+			String input = scan.next();
+			number = Integer.parseInt(input);
+		} catch (Exception e) {
+			System.err.println("숫자만 입력하세요.");
+		}
+		
+		return number;
+	}
+	
+	public String inputString(String message) {
+		System.out.println(message + " : ");
+		return scan.next();
+	}
 }
