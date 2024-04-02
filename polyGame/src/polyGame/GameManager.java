@@ -14,6 +14,14 @@ public class GameManager {
 	
 	Map<String, Stage> stageList = new HashMap<String, Stage>();
 	
+	public GameManager() {
+		stageList.put("TITLE", new StageTitle());
+		stageList.put("BATTLE", new StageTitle());
+		stageList.put("LOBBY", new StageTitle());
+		
+		nextStage = "TITLE";
+	}
+	
 	public boolean changeStage() {
 		return true;
 	}
