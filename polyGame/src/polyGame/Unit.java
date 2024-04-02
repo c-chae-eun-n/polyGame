@@ -55,9 +55,9 @@ public class Unit {
 	
 	public void attack(Unit target) {
 		target.curHp -= power;
-		System.out.println("[" + name + "] 이 " + "[" + target.name + "] 에게 " + power + "의 데미지를 입힙니다. ");
+		System.out.print("[" + name + "] 이 " + "[" + target.name + "] 에게 " + power + "의 데미지를 입힙니다. ");
 		if(target.curHp <= 0) {
-			System.out.println("[" + target.name + "] 을 쳐치했습니다.");
+			System.out.println("[" + target.name + "] 을 처치했습니다.");
 			target.curHp = 0;
 		}
 	}
