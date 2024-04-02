@@ -71,8 +71,8 @@ public class StageBattle extends Stage {
 			return;
 		while(true) {
 			int idx = random.nextInt(playerList.size());
-			if(playerList.get(index).getCurHp() > 0) {
-				m.attack(playerList.get(index));
+			if(playerList.get(idx).getCurHp() > 0) {
+				m.attack(playerList.get(idx));
 				break;
 			}
 		}
