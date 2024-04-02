@@ -31,4 +31,18 @@ public class StageBattle extends Stage {
 		playerDead = playerList.size();
 	}
 
+	public void printCharacter() {
+		System.out.println("==== [BATTLE] ====");
+		
+		System.out.println("==== [PLAYER] ====");
+		for(int i=0; i<playerList.size(); i++)
+			playerList.get(i).printStatus();
+		
+		System.out.println("==== [MONSTER ====");
+		for(int i=0; i<monsterList.size(); i++) {
+			monsterList.get(i).printStatus();
+		}
+	}
+	
+	
 }
