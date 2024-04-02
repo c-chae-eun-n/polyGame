@@ -77,4 +77,22 @@ public class StageBattle extends Stage {
 			}
 		}
 	}
+	
+	void checkLive() {
+		int num = 0;
+		for (int i = 0; i < playerList.size(); i++) {
+			if (playerList.get(i).getCurHp() <= 0) {
+				num += 1;
+			}
+		}
+		playerDead = playerList.size() - num;
+		num = 0;
+		for (int i = 0; i < monsterList.size(); i++) {
+			if (monsterList.get(i).getCurHp() <= 0) {
+				num += 1;
+			}
+		}
+		monDead = monsterList.size() - num;
+
+	}
 }
