@@ -14,4 +14,14 @@ public class Unit {
 		this.curHp = maxHp;
 		this.power = power;
 	}
+	
+	public int getCurHp() {
+		return this.curHp;
+	}
+	
+	public void setCurHp(int curHp) {
+		this.curHp = curHp;
+	}
+	
+	
 }
