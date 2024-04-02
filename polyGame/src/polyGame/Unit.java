@@ -9,10 +9,10 @@ public class Unit {
 	public Unit() {};
 	
 	public Unit(String name, int maxHp, int power) {
-		this.name = name;
+		this.setName(name);
 		this.maxHp = maxHp;
 		this.curHp = maxHp;
-		this.power = power;
+		this.setPower(power);
 	}
 	
 	public int getCurHp() {
@@ -23,5 +23,27 @@ public class Unit {
 		this.curHp = curHp;
 	}
 	
+	public int getMaxHp() {
+		return this.maxHp;
+	}
 	
+	public void setMaxHp(int maxHp) {
+		this.maxHp = maxHp;
+	}
+
+	public int getPower() {
+		return this.power;
+	}
+
+	public void setPower(int power) {
+		this.power = power;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
