@@ -13,6 +13,37 @@ public class StageBattle extends Stage {
 
 	@Override
 	public boolean update() {
+		boolean run = true;
+		int p_index = 0;
+		int m_index = 0;
+		boolean turn = true;
+
+		while (run) {
+			if (turn) {
+				printCharacter();
+				if (p_index < playerList.size()) {
+					playerAttack(p_index);
+
+					p_index += 1;
+				} else {
+					turn = !turn;
+					p_index = 0;
+				}
+
+			} else if (!turn) {
+				if (m_index < monsterList.size()) {
+					monsterAttack(m_index);
+					m_index += 1;
+				} else {
+					turn = !turn;
+					m_index = 0;
+				}
+			}
+			checkLive();
+			if (monDead <= 0 || playerDead <= 0)
+				break;
+		}
+		GameManager.nextStage = "LOBBY";
 		return false;
 	}
 
@@ -78,7 +109,7 @@ public class StageBattle extends Stage {
 		}
 	}
 	
-	void checkLive() {
+	private void checkLive() {
 		int num = 0;
 		for (int i = 0; i < playerList.size(); i++) {
 			if (playerList.get(i).getCurHp() <= 0) {
