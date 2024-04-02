@@ -50,7 +50,7 @@ public class GameManager {
 		int number = 0;
 		
 		try {
-			System.out.println(message + " : ");
+			System.out.println(message);
 			String input = scan.next();
 			number = Integer.parseInt(input);
 		} catch (Exception e) {
@@ -61,7 +61,7 @@ public class GameManager {
 	}
 	
 	public static String inputString(String message) {
-		System.out.println(message + " : ");
+		System.out.println(message);
 		return scan.next();
 	}
 }
