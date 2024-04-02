@@ -82,7 +82,7 @@ public class StageBattle extends Stage {
 		
 		System.out.println("==== [메뉴 선택] ====");
 		System.out.println("[" + p.getName() + "] [1.어택] [2.스킬]");
-		int sel = GameManager.scan.nextInt();
+		int sel = GameManager.inputNumber("");
 		if(sel == 1) {
 			while(true) {
 				int idx = random.nextInt(monsterList.size());
