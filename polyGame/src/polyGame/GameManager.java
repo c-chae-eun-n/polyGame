@@ -46,7 +46,7 @@ public class GameManager {
 			return true;
 	}
 	
-	public int inputNumber(String message) {
+	public static int inputNumber(String message) {
 		int number = 0;
 		
 		try {
@@ -60,7 +60,7 @@ public class GameManager {
 		return number;
 	}
 	
-	public String inputString(String message) {
+	public static String inputString(String message) {
 		System.out.println(message + " : ");
 		return scan.next();
 	}
