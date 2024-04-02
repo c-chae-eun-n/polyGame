@@ -1,5 +1,15 @@
 package polyGame;
 
-public class StageBattle {
+public class StageBattle extends Stage {
+
+	@Override
+	public boolean update() {
+		return false;
+	}
+
+	@Override
+	public void monsterRandomSet() {
+		
+	}
 
 }
