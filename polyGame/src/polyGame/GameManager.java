@@ -23,6 +23,26 @@ public class GameManager {
 	}
 	
 	public boolean changeStage() {
-		return true;
+		System.out.println("curStage : " + curStage);
+		System.out.println("nextStage : " + nextStage);
+		
+		if(curStage.equals(nextStage))
+			return true;
+		
+		curStage = nextStage;
+		Stage stage = stageList.get(curStage);
+		stage.monsterRandomSet();
+		
+		boolean run = true;
+		while(true) {
+			run = stage.update();
+			if(run == false)
+				break;
+		}
+		
+		if(nextStage.equals(""))
+			return false;
+		else
+			return true;
 	}
 }
