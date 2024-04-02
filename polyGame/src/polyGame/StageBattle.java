@@ -65,4 +65,16 @@ public class StageBattle extends Stage {
 		}
 	}
 	
+	public void monsterAttack(int index) {
+		Unit m = monsterList.get(index);
+		if(m.getCurHp() <= 0)
+			return;
+		while(true) {
+			int idx = random.nextInt(playerList.size());
+			if(playerList.get(index).getCurHp() > 0) {
+				m.attack(playerList.get(index));
+				break;
+			}
+		}
+	}
 }
