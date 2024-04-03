@@ -6,7 +6,7 @@ public class StageLobby extends Stage {
 	public boolean update() {
 		int sel = 0;
 		while(sel != 1 && sel != 2) {
-			System.out.println("============= [LOBBY] =============");
+			System.out.println("============== [LOBBY] =============");
 			System.out.print("         [1.전투]    [2.종료]");
 			sel = GameManager.inputNumber("");
 			if(sel == 1) {
