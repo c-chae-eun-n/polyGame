@@ -47,7 +47,7 @@ public class Unit {
 		this.name = name;
 	}
 	
-	public void setMonster(int maxHp, int power) {
+	public void setPlay(int maxHp, int power) {
 		this.maxHp = maxHp;
 		this.curHp = maxHp;
 		this.power = power;
