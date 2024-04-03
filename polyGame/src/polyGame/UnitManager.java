@@ -73,4 +73,12 @@ public class UnitManager {
 	public int playerListSize() {
 		return playerList.size();
 	}
+	
+	public Vector<Player> getPlayerList(){
+		return playerList;
+	}
+	
+	public Vector<Unit> getMonsterList(){
+		return monsterList;
+	}
 }
