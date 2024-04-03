@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.Vector;
 
 public class StageBattle extends Stage {
-	UnitManager unitManager = new UnitManager();
-	Vector<Player> playerList = null;
-	Vector<Unit> monsterList = null;
-	Random random = new Random();
+	private UnitManager unitManager = new UnitManager();
+	private Vector<Player> playerList = null;
+	private Vector<Unit> monsterList = null;
+	private Random random = new Random();
 	int monDead = 0;
 	int playerDead = 0;
 
@@ -62,15 +62,18 @@ public class StageBattle extends Stage {
 
 	@Override
 	public void monsterRandomSet() {
-		unitManager.monsterList.clear();
+		unitManager.clearMonsterList();
 		int monsterNum = random.nextInt(3) + 3;
 		unitManager.monsterRandomSet(monsterNum);
 		
-		playerList = null;
-		playerList = unitManager.playerList;
+		if(unitManager.playerListSize() == 0) {
+			for(int i=0; i<3; i++)
+				unitManager.playerRandomSet(unitManager.selectPlayer());
+		}
 		
-		monsterList = null;
-		monsterList = unitManager.monsterList;
+		playerList = unitManager.getPlayerList();
+		
+		monsterList = unitManager.getMonsterList();
 		
 		monDead = monsterList.size();
 		playerDead = playerList.size();
