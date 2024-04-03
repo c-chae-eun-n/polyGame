@@ -50,7 +50,8 @@ public class StageBattle extends Stage {
 	@Override
 	public void monsterRandomSet() {
 		unitManager.monsterList.clear();
-		unitManager.monsterRandomSet(4);
+		int monsterNum = random.nextInt(3) + 3;
+		unitManager.monsterRandomSet(monsterNum);
 		
 		playerList = null;
 		playerList = unitManager.playerList;
