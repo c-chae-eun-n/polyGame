@@ -27,7 +27,7 @@ public class StageBattle extends Stage {
 				printCharacter();
 				if (p_index < playerList.size()) {
 					playerAttack(p_index);
-
+					System.out.println();
 					p_index += 1;
 				} else {
 					turn = !turn;
@@ -39,6 +39,7 @@ public class StageBattle extends Stage {
 					monsterAttack(m_index);
 					m_index += 1;
 				} else {
+					System.out.println();
 					turn = !turn;
 					m_index = 0;
 				}
@@ -86,6 +87,7 @@ public class StageBattle extends Stage {
 		for(int i=0; i<monsterList.size(); i++) {
 			monsterList.get(i).printStatus();
 		}
+		System.out.println("=====================================\n");
 	}
 	
 	public void playerAttack(int index) {
