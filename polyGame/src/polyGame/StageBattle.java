@@ -134,7 +134,8 @@ public class StageBattle extends Stage {
 					((UnitOrc) m).skill(playerList.get(idx));
 					break;
 				} else if(m instanceof UnitWolf) {
-					((UnitWolf) m).skill();
+					int r = random.nextInt(playerList.size());
+					((UnitWolf) m).skill(playerList.get(idx), playerList.get(r));
 					break;
 				}
 			}
