@@ -2,8 +2,10 @@ package polyGame;
 
 public class Warrior extends Player {
 
-	public Warrior(String name, int max, int power) {
-		super(name, max, power);
+	public Warrior(int max, int power) {
+		super("전사", max, power);
 	}
+
+
 
 }
