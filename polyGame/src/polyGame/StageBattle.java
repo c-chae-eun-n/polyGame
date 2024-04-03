@@ -20,6 +20,10 @@ public class StageBattle extends Stage {
 
 		while (run) {
 			if (turn) {
+				if(p_index < playerList.size() && playerList.get(p_index).getCurHp() <= 0) {
+					p_index += 1;
+					continue;
+				}
 				printCharacter();
 				if (p_index < playerList.size()) {
 					playerAttack(p_index);
@@ -40,8 +44,16 @@ public class StageBattle extends Stage {
 				}
 			}
 			checkLive();
-			if (monDead <= 0 || playerDead <= 0)
+			if (monDead <= 0 || playerDead <= 0) {
+				printCharacter();
+				if(playerDead <= 0) {
+					GameManager.nextStage = "";
+					System.err.println("플레이어 전멸-!");
+					System.err.println("패배-");
+					return false;
+				}
 				break;
+			}
 		}
 		GameManager.nextStage = "LOBBY";
 		return false;
