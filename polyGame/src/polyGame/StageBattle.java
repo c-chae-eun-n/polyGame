@@ -118,9 +118,23 @@ public class StageBattle extends Stage {
 			return;
 		while(true) {
 			int idx = random.nextInt(playerList.size());
-			if(playerList.get(idx).getCurHp() > 0) {
-				m.attack(playerList.get(idx));
-				break;
+			int randomAttack = random.nextInt(3);
+			if(randomAttack != 0) {
+				if(playerList.get(idx).getCurHp() > 0) {
+					m.attack(playerList.get(idx));
+					break;
+				}
+			}else {
+				if(m instanceof UnitBat) {
+					((UnitBat) m).skill();
+					break;
+				} else if(m instanceof UnitOrc) {
+					((UnitOrc) m).skill(playerList.get(idx));
+					break;
+				} else if(m instanceof UnitWolf) {
+					((UnitWolf) m).skill();
+					break;
+				}
 			}
 		}
 	}
