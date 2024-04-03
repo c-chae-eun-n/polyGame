@@ -4,13 +4,13 @@ import java.util.Random;
 import java.util.Vector;
 
 public class UnitManager {
-	Vector<Player> playerList = new Vector<>();
-	Vector<Unit> monsterList = new Vector<>();
+	private Vector<Player> playerList = new Vector<>();
+	private Vector<Unit> monsterList = new Vector<>();
 	
-	String path = "polyGame.";
-	String monsters[] = {"UnitWolf", "UnitBat", "UnitOrc"};
-	String players[] = {"Warrior", "Wizard", "Healer"};
-	Random random = new Random();
+	private String path = "polyGame.";
+	private String monsters[] = {"UnitWolf", "UnitBat", "UnitOrc"};
+	private String players[] = {"Warrior", "Wizard", "Healer"};
+	private Random random = new Random();
 
 	public UnitManager() {
 		
@@ -66,4 +66,7 @@ public class UnitManager {
 		return player;
 	}
 	
+	public void clearMonsterList() {
+		monsterList.clear();
+	}
 }
