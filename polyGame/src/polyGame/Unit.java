@@ -61,7 +61,7 @@ public class Unit {
 				System.err.println("[" + target.name + "] 사망-");
 				target.curHp = 0;
 			} else {
-				System.err.println("[" + target.name + "]을(를) 처치했습니다.");
+				System.err.println("[" + target.name + "]을(를) 처치했습니다.\n");
 				target.curHp = 0;
 			}
 		}
