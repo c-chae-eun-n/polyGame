@@ -57,8 +57,13 @@ public class Unit {
 		target.curHp -= power;
 		System.out.println("[" + name + "]이(가) " + "[" + target.name + "]에게 " + power + "의 데미지를 입힙니다.");
 		if(target.curHp <= 0) {
-			System.out.println("[" + target.name + "]을(를) 처치했습니다.");
-			target.curHp = 0;
+			if(target instanceof Player) {
+				System.err.println("[" + target.name + "] 사망-");
+				target.curHp = 0;
+			} else {
+				System.err.println("[" + target.name + "]을(를) 처치했습니다.");
+				target.curHp = 0;
+			}
 		}
 	}
 	
