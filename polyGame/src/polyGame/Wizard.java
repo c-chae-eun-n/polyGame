@@ -2,8 +2,8 @@ package polyGame;
 
 public class Wizard extends Player {
 
-	public Wizard(String name, int max, int power) {
-		super(name, max, power);
+	public Wizard(int max, int power) {
+		super("마법사", max, power);
 	}
 
 }
