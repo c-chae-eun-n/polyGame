@@ -128,7 +128,7 @@ public class StageBattle extends Stage {
 				}
 			}else {
 				if(m instanceof UnitBat) {
-					((UnitBat) m).skill();
+					((UnitBat) m).skill(playerList.get(idx));
 					break;
 				} else if(m instanceof UnitOrc) {
 					((UnitOrc) m).skill(playerList.get(idx));
