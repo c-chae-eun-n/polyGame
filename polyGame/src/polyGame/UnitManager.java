@@ -69,4 +69,8 @@ public class UnitManager {
 	public void clearMonsterList() {
 		monsterList.clear();
 	}
+	
+	public int playerListSize() {
+		return playerList.size();
+	}
 }
