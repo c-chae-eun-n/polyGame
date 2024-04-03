@@ -83,11 +83,11 @@ public class StageBattle extends Stage {
 		for(int i=0; i<playerList.size(); i++)
 			playerList.get(i).printStatus();
 		
-		System.out.println("============= [MONSTER] =============");
+		System.out.println("============= [MONSTER] ============");
 		for(int i=0; i<monsterList.size(); i++) {
 			monsterList.get(i).printStatus();
 		}
-		System.out.println("=====================================\n");
+		System.out.println("====================================\n");
 	}
 	
 	public void playerAttack(int index) {
@@ -95,7 +95,7 @@ public class StageBattle extends Stage {
 		if(p.getCurHp() <= 0)
 			return;
 		
-		System.out.println("============= [메뉴 선택] =============");
+		System.out.println("============== [MENU] ==============");
 		int sel = 0;
 		while(sel != 1 && sel != 2) {
 			System.out.print("        [" + p.getName() + "] [1.어택] [2.스킬]");
