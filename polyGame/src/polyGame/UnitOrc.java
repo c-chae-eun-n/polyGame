@@ -7,7 +7,7 @@ public class UnitOrc extends Unit {
 	}
 	
 	public void skill(Unit target) {
-		System.err.println("오크 격노-! 3배 공격력으로 강타!!");
+		System.err.println("[오크] 격노-! 3배 공격력으로 강타!!");
 		target.setCurHp(getCurHp()-(super.getPower()*3));
 		System.err.println("[" + super.getName() + "]가 " + "[" + target.getName() + "]에게 " + super.getPower()*3 + "의 데미지를 입힙니다.");
 		if(target.getCurHp() <= 0) {
