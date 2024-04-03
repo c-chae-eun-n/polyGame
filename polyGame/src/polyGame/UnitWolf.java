@@ -8,9 +8,9 @@ public class UnitWolf extends Unit {
 	
 	public void skill(Unit target, Unit target2) {
 		System.err.println("[늑대] 돌진-! 2연속 공격!!");
-		target.setCurHp(getCurHp()-(super.getPower()));
+		target.setCurHp(target.getCurHp()-(super.getPower()));
 		System.err.println("[" + super.getName() + "]가 " + "[" + target.getName() + "]에게 " + super.getPower() + "의 데미지를 입힙니다.");
-		target2.setCurHp(getCurHp()-(super.getPower()));
+		target2.setCurHp(target2.getCurHp()-(super.getPower()));
 		System.err.println("[" + super.getName() + "]가 " + "[" + target2.getName() + "]에게 " + super.getPower() + "의 데미지를 입힙니다.");
 		
 		if(target.getCurHp() <= 0) {
