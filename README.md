@@ -26,7 +26,7 @@
 <!-- <img src="images/boardSystem.jpg" width="300"> -->
 <img src="images/polyGameStage.jpg" width="500"> <br>
 ## Unit Diagram (UML)
-<img src="images/polyGameUnit.jpg" width="500"> <br>
+<img src="images/polyGameUnit.jpg" width="500"> <br> <br><br><br>
 
 
 ## DEMO
