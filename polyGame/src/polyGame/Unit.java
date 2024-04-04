@@ -28,10 +28,6 @@ public class Unit {
 	public int getMaxHp() {
 		return this.maxHp;
 	}
-	
-	public void setMaxHp(int maxHp) {
-		this.maxHp = maxHp;
-	}
 
 	public int getPower() {
 		return this.power;
