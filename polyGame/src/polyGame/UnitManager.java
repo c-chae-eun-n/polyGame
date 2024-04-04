@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Vector;
 
 public class UnitManager {
-	private Vector<Player> playerList = new Vector<>();
+	private Vector<Player> playerList;
 	private Vector<Unit> monsterList = new Vector<>();
 	
 	private String path = "polyGame.";
@@ -12,8 +12,14 @@ public class UnitManager {
 	private String players[] = {"Warrior", "Wizard", "Healer"};
 	private Random random = new Random();
 
-	public UnitManager() {
-		
+	private UnitManager() {
+		playerList = new Vector<>();
+	}
+	
+	private static UnitManager instance = new UnitManager();
+	
+	public static UnitManager getInstance() {
+		return instance;
 	}
 	
 	public void monsterRandomSet(int size) {
