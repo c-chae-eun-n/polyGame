@@ -5,6 +5,7 @@ public class Unit {
 	private int maxHp;
 	private int power;
 	private String name;
+	private boolean isShield;
 	
 	public Unit() {};
 	
@@ -51,6 +52,14 @@ public class Unit {
 		this.maxHp = maxHp;
 		this.curHp = maxHp;
 		this.power = power;
+	}
+
+	public boolean isShield() {
+		return isShield;
+	}
+
+	public void setShield(boolean isShield) {
+		this.isShield = isShield;
 	}
 	
 	public void attack(Unit target) {
