@@ -6,6 +6,7 @@ public class Unit {
 	private int power;
 	private String name;
 	private boolean isShield;
+	private boolean isStun;
 	
 	public Unit() {};
 	
@@ -60,6 +61,14 @@ public class Unit {
 
 	public void setShield(boolean isShield) {
 		this.isShield = isShield;
+	}
+
+	public boolean isStun() {
+		return isStun;
+	}
+
+	public void setStun(boolean isStun) {
+		this.isStun = isStun;
 	}
 	
 	public void attack(Unit target) {
