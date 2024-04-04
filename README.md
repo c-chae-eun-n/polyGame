@@ -28,7 +28,6 @@
 ## Unit Diagram (UML)
 <img src="images/polyGameUnit.jpg" width="500"> <br>
 
-<!-- 
+
 ## DEMO
-<img src="images/boardGif.gif" width="400"> <br><br>
--->
+<img src="images/polyGameGif.gif" width="400"> <br><br>
