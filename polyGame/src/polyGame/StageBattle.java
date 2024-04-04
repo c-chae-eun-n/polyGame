@@ -14,34 +14,34 @@ public class StageBattle extends Stage {
 	@Override
 	public boolean update() {
 		boolean run = true;
-		int p_index = 0;
-		int m_index = 0;
+		int pIndex = 0;
+		int mIndex = 0;
 		boolean turn = true;
 
 		while (run) {
 			if (turn) {
-				if(p_index < playerList.size() && playerList.get(p_index).getCurHp() <= 0) {
-					p_index += 1;
+				if(pIndex < playerList.size() && playerList.get(pIndex).getCurHp() <= 0) {
+					pIndex += 1;
 					continue;
 				}
 				printCharacter();
-				if (p_index < playerList.size()) {
-					playerAttack(p_index);
+				if (pIndex < playerList.size()) {
+					playerAttack(pIndex);
 					System.out.println();
-					p_index += 1;
+					pIndex += 1;
 				} else {
 					turn = !turn;
-					p_index = 0;
+					pIndex = 0;
 				}
 
 			} else if (!turn) {
-				if (m_index < monsterList.size()) {
-					monsterAttack(m_index);
-					m_index += 1;
+				if (mIndex < monsterList.size()) {
+					monsterAttack(mIndex);
+					mIndex += 1;
 				} else {
 					System.out.println();
 					turn = !turn;
-					m_index = 0;
+					mIndex = 0;
 				}
 			}
 			checkLive();
