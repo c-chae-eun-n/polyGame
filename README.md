@@ -24,9 +24,9 @@
 
 ## Stage Diagram (UML)
 <!-- <img src="images/boardSystem.jpg" width="300"> -->
-<img src="images/polyGameStage.jpg" width="650"> <br>
+<img src="images/polyGameStage.jpg" width="500"> <br>
 ## Unit Diagram (UML)
-<img src="images/polyGameStage.jpg" width="650"> <br>
+<img src="images/polyGameUnit.jpg" width="500"> <br>
 
 <!-- 
 ## DEMO
