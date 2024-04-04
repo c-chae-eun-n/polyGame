@@ -8,8 +8,14 @@ public class UnitOrc extends Unit {
 	
 	public void skill(Unit target) {
 		System.err.println("[오크] 격노-! 3배 공격력으로 강타!!");
+		if(isStun()) {
+			System.err.println("스턴이 걸려서 공격 실패!!");
+			setStun(false);
+			return;
+		}
 		if(target.isShield()) {
 			System.err.println("[" + target.getName() + "]" + " 쉴드 발동 공격 실패!!");
+			target.setShield(false);
 			return;
 		}
 		target.setCurHp(target.getCurHp()-(super.getPower()*3));
