@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Vector;
 
 public class StageBattle extends Stage {
-	private UnitManager unitManager = new UnitManager();
+	private UnitManager unitManager = UnitManager.getInstance();
 	private Vector<Player> playerList = null;
 	private Vector<Unit> monsterList = null;
 	private Random random = new Random();
@@ -137,25 +137,40 @@ public class StageBattle extends Stage {
 		Unit m = monsterList.get(index);
 		if(m.getCurHp() <= 0)
 			return;
+		if(m.isStun()) {
+			System.err.println("[" + m.getName() + "]이(가) " + "스턴이 걸려서 공격 실패!!");
+			m.setStun(false);
+			return;
+		}
 		while(true) {
 			int idx = random.nextInt(playerList.size());
-			int randomAttack = random.nextInt(3);
-			if(randomAttack != 0) {
-				if(playerList.get(idx).getCurHp() > 0) {
-					m.attack(playerList.get(idx));
-					break;
+			Unit p = playerList.get(idx);
+			if(p.getCurHp() > 0) {
+				if(p.isShield()) {
+					System.err.println("[" + p.getName() + "]" + " 쉴드 발동 공격 실패!!");
+					p.setShield(false);
+					return;
 				}
-			}else {
-				if(playerList.get(idx).getCurHp() > 0) {
+				int randomAttack = random.nextInt(3);
+				if(randomAttack != 0) {
+					m.attack(p);
+					break;
+				}else {
 					if(m instanceof UnitBat) {
-						((UnitBat) m).skill(playerList.get(idx));
+						((UnitBat) m).skill(p);
 						break;
 					} else if(m instanceof UnitOrc) {
-						((UnitOrc) m).skill(playerList.get(idx));
+						((UnitOrc) m).skill(p);
 						break;
 					} else if(m instanceof UnitWolf) {
-						int r = random.nextInt(playerList.size());
-						((UnitWolf) m).skill(playerList.get(idx), playerList.get(r));
+						int rNum = random.nextInt(playerList.size());
+						Unit r = playerList.get(rNum);
+						if(r.isShield()) {
+							System.err.println("[" + r.getName() + "]" + " 쉴드 발동 공격 실패!!");
+							r.setShield(false);
+							return;
+						}
+						((UnitWolf) m).skill(p, r);
 						break;
 					}
 				}
