@@ -22,11 +22,13 @@
 * 몬스터들은 일정 확률로 일반 공격과 스킬 중 하나로 플레이어에게 데미지를 입힌다.
 * 몬스터들을 전부 처치하면 로비로 돌아올 수 있으며, 플레이어가 전부 사망하면 게임이 종료된다.
 
-## Class Diagram (UML)
+## Stage Diagram (UML)
 <!-- <img src="images/boardSystem.jpg" width="300"> -->
-<!-- 
-<img src="images/boardSystem.jpg" width="650"> <br><br>
+<img src="images/polyGameStage.jpg" width="650"> <br>
+## Unit Diagram (UML)
+<img src="images/polyGameStage.jpg" width="650"> <br>
 
+<!-- 
 ## DEMO
 <img src="images/boardGif.gif" width="400"> <br><br>
 -->
