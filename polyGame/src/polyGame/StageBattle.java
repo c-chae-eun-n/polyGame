@@ -114,6 +114,22 @@ public class StageBattle extends Stage {
 				}
 			}
 		} else if (sel == 2) {
+			while(true) {
+				int idx = random.nextInt(monsterList.size());
+				
+				if(monsterList.get(idx).getCurHp() > 0) {
+					if(p instanceof Warrior) {
+						((Warrior) p).skill(monsterList.get(idx));
+						break;
+					} else if(p instanceof Wizard) {
+						((Wizard) p).skill(monsterList.get(idx));
+						break;
+					} else if(p instanceof Healer) {
+						((Healer) p).skill(monsterList.get(idx));
+						break;
+					}
+				}
+			}
 		}
 	}
 	
@@ -130,16 +146,18 @@ public class StageBattle extends Stage {
 					break;
 				}
 			}else {
-				if(m instanceof UnitBat) {
-					((UnitBat) m).skill(playerList.get(idx));
-					break;
-				} else if(m instanceof UnitOrc) {
-					((UnitOrc) m).skill(playerList.get(idx));
-					break;
-				} else if(m instanceof UnitWolf) {
-					int r = random.nextInt(playerList.size());
-					((UnitWolf) m).skill(playerList.get(idx), playerList.get(r));
-					break;
+				if(playerList.get(idx).getCurHp() > 0) {
+					if(m instanceof UnitBat) {
+						((UnitBat) m).skill(playerList.get(idx));
+						break;
+					} else if(m instanceof UnitOrc) {
+						((UnitOrc) m).skill(playerList.get(idx));
+						break;
+					} else if(m instanceof UnitWolf) {
+						int r = random.nextInt(playerList.size());
+						((UnitWolf) m).skill(playerList.get(idx), playerList.get(r));
+						break;
+					}
 				}
 			}
 		}
